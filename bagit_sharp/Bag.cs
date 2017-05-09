@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Compression;
 
 namespace bagit_sharp
 {
@@ -537,7 +538,7 @@ namespace bagit_sharp
         #endregion
 
         #region "Zip Bag/Unzip Bag"
-        public bool ZipFile(string dir = "", string sdest = "", bool bGenerateChecksum = true)
+        public bool isZipFile(string dir = "", string sdest = "", bool bGenerateChecksum = true)
         {
             string zip_file_name = "";
             if (dir.Trim().Length == 0)
@@ -549,7 +550,7 @@ namespace bagit_sharp
             {
                 //you have to remove the directory separator to get the 
                 //parent directory for some reason
-                sdest = System.IO.Directory.GetParent(dir.TrimEnd(new char[] { System.IO.Path.DirectorySeparatorChar })).FullName;
+                // sdest = System.IO.Directory.GetParent(dir.TrimEnd(new char[] { System.IO.Path.DirectorySeparatorChar })).FullName;
 
                 if (sdest.EndsWith(System.IO.Path.DirectorySeparatorChar.ToString()) == false)
                 {
@@ -561,8 +562,7 @@ namespace bagit_sharp
 
             try
             {
-                ICSharpCode.SharpZipLib.Zip.FastZip fast = new ICSharpCode.SharpZipLib.Zip.FastZip();
-                fast.CreateZip(zip_file_name, dir, true, null);
+                ZipFile.CreateFromDirectory(dir, zip_file_name, CompressionLevel.Fastest, true);
 
                 if (bGenerateChecksum == true)
                 {
