@@ -2,7 +2,7 @@
 bagit-sharp is a C# library for working with [BagIt] (http://purl.org/net/bagit) style packages.  It's functionality loosely tries to emulate the functionality found in the [bagit-python] (https://github.com/LibraryOfCongress/bagit-python) project
 
 ## Dependencies
-The project makes use of the [icsharpcode/SharpZipLib] (https://github.com/icsharpcode/SharpZipLib) project.  
+No.
 
 ## Installation
 The project includes a Visual Studio project file.  To build a binary library from the code you will need to:
