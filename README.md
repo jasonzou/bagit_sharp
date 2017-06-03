@@ -7,10 +7,8 @@ The project makes use of the [icsharpcode/SharpZipLib] (https://github.com/icsha
 ## Installation
 The project includes a Visual Studio project file.  To build a binary library from the code you will need to:
 
-1. Download a binary or build a binary of the [SharpZipLib] (https://github.com/icsharpcode/SharpZipLib) library
-2. Open the project in [Visual Studio] (https://www.visualstudio.com/downloads/) or compatible tool
-3. Ensure a reference to the SharpZipLib
-4. Build
+1. Open the project in [Visual Studio] (https://www.visualstudio.com/downloads/) or compatible tool
+2. Build
 
 To simplify use, there is also a binary copy available via Release that includes binaries of both the bagit-sharp library and the referenced SharpZipLib code that it's built against.
 
